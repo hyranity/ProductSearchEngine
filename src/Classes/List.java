@@ -6,8 +6,7 @@ package Classes;
 * https://howtodoinjava.com/data-structure/list-implementation-example-in-java/
 * https://stackoverflow.com/questions/529085/how-to-create-a-generic-array-in-java
  */
-
-public class List<E> {
+public class List<E> implements ListInterface<E> {
 
     public int size; // Size of list
     private E[] records;
@@ -48,17 +47,18 @@ public class List<E> {
     }
 
     // Make sure size is adequate
-    private void validateSize() {
+    public void validateSize() {
 
         // If current/new size is more than actual array length
         if (size > records.length) {
             // Extend
-            E[] newArray = copyArray(records, (E[]) new Object[records.length + 5]);
+            E[] oldArray = records;
+            records = copyArray(oldArray, (E[]) new Object[records.length + 5]);
         }
     }
 
     // Allows copy of arrays
-    private E[] copyArray(E[] oldArray, E[] newArray) {
+    public E[] copyArray(E[] oldArray, E[] newArray) {
         int count = 0;
 
         for (E obj : oldArray) {
@@ -70,29 +70,10 @@ public class List<E> {
         return newArray;
     }
 
-    // Allows pop method like stack
-    public E pop() {
-        // lower the size by 1
-        size--;
-
-        // Pop the Object
-        E poppedObject = records[size];
-
-        // Set to null
-        records[size] = null;
-
-        return poppedObject;
-    }
-
-    // Allows push method like stack
-    public void push(E e) {
-        add(e);
-    }
-
     // Removes from list
     public void remove(int index) {
 
-        // remove the current time
+        // remove the current index
         records[index] = null;
 
         // Shift all content up
@@ -121,6 +102,12 @@ public class List<E> {
         } else {
             return "No record available";
         }
+    }
+
+    public int indexOf(E e) {
+       //Search
+       
+       return 0;
     }
 
 }
