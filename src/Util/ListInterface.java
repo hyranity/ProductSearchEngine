@@ -1,19 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Classes;
-
 /**
- * This is the interface for the custom List class.
+ * ListInterface ADT
+ * 
+ * DESCRIPTION
+ * This is the interface for the custom List class, which allows the storing of objects on a list structure.
+ * It contains all necessary functions, allowing user to add, remove, and retrieve elements of the list.
+ * Certain methods such as validateSize() and copyArray() are used by the List class itself to ensure that all functions work as expected. 
+ * Detailed explanation of each method will be listed below
+ * 
  * E = Element of the list
  */
+
+package Util;
+
 public interface ListInterface<E> {
 
     E getRecord(int index);
     /*
-    description: Returns an element
+    description: Returns an element based on the given index
     precondition: Item must exist in the list
     postcondition: none
     return: E
