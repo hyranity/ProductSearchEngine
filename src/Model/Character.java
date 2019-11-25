@@ -13,6 +13,13 @@ public class Character {
     private String name;
     private VoiceActor voiceActor;
 
+    // Constructor
+    public Character(String name, VoiceActor voiceActor) {
+        this.name = name;
+        this.voiceActor = voiceActor;
+    }
+    
+    // Setters & Getters
     public String getName() {
         return name;
     }

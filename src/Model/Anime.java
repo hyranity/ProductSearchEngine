@@ -5,10 +5,11 @@ import Util.List;
 
 public class Anime {
     private String name;
-    private String studio;
+    private Studio studio;
     private List<Character> cast;
 
-    public Anime(String name, String studio, List<Character> cast) {
+    // Constructor
+    public Anime(String name, Studio studio, List<Character> cast) {
         this.name = name;
         this.studio = studio;
         this.cast = cast;
@@ -19,6 +20,7 @@ public class Anime {
         cast.add(character);
     }
 
+    // Getters & Setters
     public String getName() {
         return name;
     }
@@ -27,11 +29,11 @@ public class Anime {
         this.name = name;
     }
 
-    public String getStudio() {
+    public Studio getStudio() {
         return studio;
     }
 
-    public void setStudio(String studio) {
+    public void setStudio(Studio studio) {
         this.studio = studio;
     }
     
