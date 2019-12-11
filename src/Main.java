@@ -6,8 +6,8 @@ public class Main {
     static Util.List<Anime> animeList = new Util.List();
     
     public static void main(String[] args){
-        Main main = new Main();
-        main.setData();
+        String[] choices = {"One", "Two", "Three"};
+        System.out.println("You have chosen " + Display.showMenuChoice("Main menu", choices));
         
     }
     
@@ -29,6 +29,7 @@ public class Main {
        
     }
     
+    // Create all voice actors here
     public List<VoiceActor> createVoiceActors(){
         
         List<VoiceActor> vaList = new List();
@@ -39,9 +40,9 @@ public class Main {
         return vaList;
     }
     
-    public void LinkCharactersToActors(){
-        List<Model.Character> cast = new List();
-        
+    // Johann's algorithm
+    public void searchFilter(){
         
     }
+    
 }
